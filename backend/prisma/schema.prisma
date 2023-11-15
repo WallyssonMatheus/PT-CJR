@@ -1,0 +1,21 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./database.db"
+}
+
+model User {
+  // NomeDaColuna TipoDaColuna @modificadores
+  id Int @id @default(autoincrement())
+  username String
+  password String
+  profile_picture Bytes?
+  gender String
+  job_title String
+  admin Boolean
+  created_at DateTime
+  updated_at DateTime
+}

@@ -7,7 +7,7 @@ datasource db {
   url      = "file:./database.db"
 }
 
-model User {
+model Users {
   // NomeDaColuna TipoDaColuna @modificadores
   id Int @id @default(autoincrement())
   username String
@@ -20,7 +20,7 @@ model User {
   updated_at DateTime
 }
 
-model Post {
+model Posts {
   id Int @id @default(autoincrement())
   user_id Int
   content String
@@ -28,7 +28,7 @@ model Post {
   created_at DateTime
 }
 
-model Comment {
+model Comments {
   id Int @id @default(autoincrement())
   post_id Int
   user_id Int

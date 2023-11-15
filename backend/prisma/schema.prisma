@@ -9,8 +9,8 @@ datasource db {
 
 model Users {
   // NomeDaColuna TipoDaColuna @modificadores
-  id              Int      @id @default(autoincrement())
-  username        String
+  id              Int        @id @default(autoincrement())
+  username        String     @unique
   password        String
   profile_picture Bytes?
   gender          String
@@ -19,15 +19,17 @@ model Users {
   created_at      DateTime
   updated_at      DateTime
   posts           Posts[]
+  comments        Comments[]
 }
 
 model Posts {
-  id         Int      @id @default(autoincrement())
+  id         Int        @id @default(autoincrement())
   user_id    Int
   content    String
   update_at  DateTime
   created_at DateTime
-  user       Users    @relation(fields: [user_id], references: [id])
+  user       Users      @relation(fields: [user_id], references: [id])
+  comments   Comments[]
 }
 
 model Comments {
@@ -35,6 +37,8 @@ model Comments {
   post_id Int
   user_id Int
   content String
+  posts   Posts  @relation(fields: [post_id], references: [id])
+  user    Users  @relation(fields: [user_id], references: [id])
 }
 
 model JobTitle {

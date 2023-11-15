@@ -20,6 +20,7 @@ model Users {
   updated_at      DateTime
   posts           Posts[]
   comments        Comments[]
+  job_name        JobTitle   @relation(fields: [job_title], references: [name])
 }
 
 model Posts {
@@ -43,7 +44,8 @@ model Comments {
 
 model JobTitle {
   id         Int      @id @default(autoincrement())
-  name       String
+  name       String   @unique
   team       String
   created_at DateTime
+  user       Users[]
 }

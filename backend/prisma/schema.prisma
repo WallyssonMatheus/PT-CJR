@@ -34,3 +34,10 @@ model Comment {
   user_id Int
   content String
 }
+
+model JobTitle {
+  id Int @id @default(autoincrement())
+  name String
+  team String
+  created_at DateTime
+}

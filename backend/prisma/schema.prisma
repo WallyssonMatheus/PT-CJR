@@ -15,8 +15,8 @@ model Users {
   name            String
   profile_picture Bytes?
   gender          String
-  job_title       String
-  admin           Boolean    @default(false)
+  job_title       String     @default("Desenvolvedor")
+  admin           Boolean?   @default(false)
   created_at      DateTime   @default(now())
   updated_at      DateTime   @updatedAt
   posts           Posts[]
@@ -28,8 +28,8 @@ model Posts {
   id         Int        @id @default(autoincrement())
   user_id    Int
   content    String
-  update_at  DateTime
-  created_at DateTime
+  update_at  DateTime   @default(now())
+  created_at DateTime   @updatedAt
   user       Users      @relation(fields: [user_id], references: [id])
   comments   Comments[]
 }
@@ -47,6 +47,6 @@ model JobTitle {
   id         Int      @id @default(autoincrement())
   name       String   @unique
   team       String
-  created_at DateTime
+  created_at DateTime @default(now())
   user       Users[]
 }

@@ -24,7 +24,16 @@ const createUser = async (body) => {
             gender,
             job_title,
             admin: false,
-        }
+        },
+        select: {
+            username: true,
+            name: true,
+            profile_picture: true,
+            gender: true,
+            job_title: true,
+            admin: true,
+            password: false,
+        },
     });
 
     return createdUser;
@@ -36,7 +45,16 @@ const getUser = async (body) => {
     const user = await prisma.users.findUnique({
         where: {
             username: email,
-        }
+        },
+        select: {
+            username: true,
+            name: true,
+            profile_picture: true,
+            gender: true,
+            job_title: true,
+            admin: true,
+            password: false,
+        },
     });
 
     if (!user) {

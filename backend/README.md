@@ -17,7 +17,9 @@ Entre na pasta "backend" e rode os seguintes comandos:
 
 ```bash
   npm install
-  
+
+  npx prisma migrate dev
+
   nodemon index.js
 ```
     

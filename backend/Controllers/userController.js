@@ -6,7 +6,7 @@ const createUser = async (req, res) => {
         res.status(201).json(user);
     } catch (error) {
         res.status(500).send(`Erro ao criar usuário: ${error}`)
-    }
+    };
 };
 
 const getUser = async (req, res) => {
@@ -15,7 +15,7 @@ const getUser = async (req, res) => {
         res.status(200).json(user);
     } catch (error) {
         res.status(404).send(`Erro ao efetuar o login: ${error}`)
-    }
+    };
 };
 
 module.exports = {

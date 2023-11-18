@@ -6,7 +6,7 @@ const createJob = async (req, res) => {
         res.status(201).json(job);
     } catch (error) {
         res.status(500).send(`Erro ao criar cargo: ${error}`)
-    }
+    };
 };
 
 module.exports = {

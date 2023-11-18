@@ -8,12 +8,12 @@ const createUser = async (body) => {
     const existingUser = await prisma.users.findUnique({
         where: {
             username: email,
-        }
+        },
     });
 
     if (existingUser) {
         throw new Error("O email já foi cadastrado na plataforma!");
-    }
+    };
 
     const createdUser = await prisma.users.create({
         data: {
@@ -63,7 +63,7 @@ const getUser = async (body) => {
 
     if (user.password !== password ) {
         throw "Email ou senha incorretos"
-    }
+    };
 
     return user;
 };

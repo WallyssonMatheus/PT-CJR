@@ -10,9 +10,9 @@ const createJob = async (body) => {
             name,
             team
         }
-    })
+    });
 
-    return user
+    return user;
 };
 
 module.exports = {

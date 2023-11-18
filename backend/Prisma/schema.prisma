@@ -1,0 +1,52 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./database.db"
+}
+
+model Users {
+  // NomeDaColuna TipoDaColuna @modificadores
+  id              Int        @id @default(autoincrement())
+  username        String     @unique
+  password        String
+  name            String
+  profile_picture Bytes?
+  gender          String
+  job_title       String     @default("Desenvolvedor")
+  admin           Boolean?   @default(false)
+  created_at      DateTime   @default(now())
+  updated_at      DateTime   @updatedAt
+  posts           Posts[]
+  comments        Comments[]
+  job_name        JobTitle   @relation(fields: [job_title], references: [name])
+}
+
+model Posts {
+  id         Int        @id @default(autoincrement())
+  user_id    Int
+  content    String
+  update_at  DateTime   @default(now())
+  created_at DateTime   @updatedAt
+  user       Users      @relation(fields: [user_id], references: [id])
+  comments   Comments[]
+}
+
+model Comments {
+  id      Int    @id @default(autoincrement())
+  post_id Int
+  user_id Int
+  content String
+  posts   Posts  @relation(fields: [post_id], references: [id])
+  user    Users  @relation(fields: [user_id], references: [id])
+}
+
+model JobTitle {
+  id         Int      @id @default(autoincrement())
+  name       String   @unique
+  team       String
+  created_at DateTime @default(now())
+  user       Users[]
+}

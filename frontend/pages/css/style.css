@@ -5,6 +5,7 @@
 }
 html, body{
     height: 100%;
+    background-color: #001830;
 }
 .cabecalho{
     width: 100%;
@@ -18,7 +19,7 @@ html, body{
     width: 110px;
     height: 40px;
     background-color: white;
-    background-image: url('../imagens/Logo_CJR.png');
+    background-image: url('../../src/imagens/Logo_CJR.png');
     background-size: 80px 40px;
     background-repeat: no-repeat;
     background-position: center;
@@ -48,19 +49,23 @@ html, body{
 .corpo{
     width: 100%;
     height: 100%;
-    background-color: #001830;
-    text-align: center;
+    background-image: url('../../src/imagens/Logo_CJR_branco.png');
+    background-repeat: no-repeat;
+    background-position: left 100px;
+    background-position-x: 30px;
 }
 .form{
     background-color: #EAEFF2;
-    height: 330px;
+    height: 530px;
     width: 400px;
     border-radius: 6px;
-    display: inline-block;
+    float: right;
+    margin-right: 100px;
+    margin-top: 60px;
     padding: 80px;
-    margin-top: 80px;
 }
 .input-container{
+    margin-top: 30px;
     margin-bottom: 30px;
 }
 .input-container input[type="text"], input[type="password"]{
@@ -70,9 +75,11 @@ html, body{
     border-radius: 5px;
     font-size: 17px;
     font-weight: bolder;
+    font
 }
-.Entrar{
+.cadastrar{
     margin-top: 10px;
+    margin-left: 65px;
     background-color: #EAEFF2;
     font-size: 17px;
     font-weight: bolder;

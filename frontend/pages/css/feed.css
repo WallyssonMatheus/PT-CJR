@@ -1,0 +1,75 @@
+.main{
+    justify-content: center;
+}
+
+.feed{
+    background-color: var(--bg-slate-white);
+    min-width: 800px;
+    max-width: 1000px;
+}
+
+.feed .title{
+    color: var(--text-blue);
+    font-size: 24px;
+    padding: 30px 35px;
+    width: inherit;
+    border-bottom: 2px solid var(--text-blue);
+}
+
+.posts-container{
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.post{
+    background-color: var(--post-blue);
+
+    border-radius: 24px;
+    color: var(--text-white);
+    padding: 30px 85px 30px 25px ;
+}
+.post .user{
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.post .user img{
+    width: 48px;
+    border-radius: 1000px;
+    overflow: hidden;
+}
+
+.user .text{
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+}
+
+.username{
+    font-size: 24px;
+}
+
+.post-date{
+    font-size: 15px;
+}
+
+.post .content{
+    padding-left: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.post .content .text{
+    font-weight: 500;
+    line-height: 18px;
+    text-align: justify;
+}
+
+.post .content img{
+    background-color: white;
+    width: 100%;
+}

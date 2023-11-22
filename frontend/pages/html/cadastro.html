@@ -5,39 +5,52 @@
     <title>PT CJR</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../css/style.css" type="text/css" />
+    <link rel="stylesheet" href="../css/signup_form.css" type="text/css" />
 </head>
 
 <body>
     <header class="cabecalho">
-        <button class="login">Entrar</button>
-        <button class="singup">Criar conta</button>
-        <div class="logo">
-        </div>
-    </header>
-    <div class="corpo">
-        <div class="form">
-            <form>
-                <div class="input-container">
-                    <input type="text" name="email" placeholder="Email" />
-                </div>
-                <div class="input-container">
-                    <input type="password" name="senha" placeholder="Senha" />
-                </div>
-                <div class="input-container">
-                    <input type="text" name="nome" placeholder="Nome" />
-                </div>
-                <div class="input-container">
-                    <input type="text" name="gênero" placeholder="Gênero" />
-                </div>
-                <div class="input-container">
-                    <input type="text" name="cargo" placeholder="Cargo" />
-                </div>
-                <a href="http://">Já possui conta? Acesse aqui</a>
-                <button class="cadastrar">Cadastrar</button>
+        <a href="./feed_deslogado.html">
+            <span class="logo">
+                <img src="../../src/imagens/Logo_CJR.png" />
+            </span>
+        </a>
 
-            </form>
-        </div>
+        <nav>
+            <a href="./cadastro.html"><button class="link signup">Criar conta</button></a>
+            <a href="./login.html"><button class="link login">Entrar</button></a>
+        </nav>
+    </header>
+    <div class="main">
+        <span class="hero-logo">
+            <img src="../../src/imagens/Logo_CJR_branco.png" style="width:120%">
+        </span>
+        <form class="form" id="form">
+            <label for="perfil">
+                <img src="../../src/imagens/ph_user-circle-thinicon-cadastro.png" style="height: 200px;" />
+            </label>
+            <input type="file" name="perfil" id="perfil" style="display:none" />
+            <div class="input-container">
+                <input type="text" name="email" placeholder="Email" id="email" />
+            </div>
+            <div class="input-container">
+                <input type="password" name="senha" placeholder="Senha" id="senha" />
+            </div>
+            <div class="input-container">
+                <input type="text" name="nome" placeholder="Nome" id="nome" />
+            </div>
+            <div class="input-container">
+                <input type="text" name="gênero" placeholder="Gênero" id="genero" />
+            </div>
+            <div class="input-container">
+                <input type="text" name="cargo" placeholder="Cargo" id="cargo" />
+            </div>
+            <a href="./login.html" id="login-link"><b>Já possui conta? Acesse aqui</b></a>
+            <button class="cadastrar">Cadastrar</button>
+
+        </form>
     </div>
+    <script src="../js/signup.js"></script>
 </body>
 
 </html>

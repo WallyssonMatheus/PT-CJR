@@ -2,6 +2,10 @@ const { PrismaClient } = require('@prisma/client');
 
 const prisma = new PrismaClient();
 
+const getJobs = (body) => {
+
+}
+
 const createJob = async (body) => {
     const { name, team } = body;
 
@@ -16,5 +20,6 @@ const createJob = async (body) => {
 };
 
 module.exports = {
+    getJobs,
     createJob,
 };

@@ -6,7 +6,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+<<<<<<< HEAD
   "prisma":{
+=======
+  "prisma": {
+>>>>>>> a1a5dcd5d3b60f60c5ca570e3a127e8b082779eb
     "schema": "Prisma/schema.prisma"
   },
   "keywords": [],

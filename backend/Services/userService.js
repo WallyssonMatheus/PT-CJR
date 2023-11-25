@@ -11,6 +11,16 @@ const createUser = async (body) => {
         },
     });
 
+    const existingJobTitle = await prisma.jobTitle.findUnique({
+        where: {
+            name: job_title,
+        }
+    });
+
+    if (!existingJobTitle) {
+        throw new Error("O cargo não está cadastrado na plataforma!");
+    };
+
     if (existingUser) {
         throw new Error("O email já foi cadastrado na plataforma!");
     };

@@ -23,7 +23,7 @@ async function signup(event){
 
     console.log(data);
 
-    const response = await fetch("")
+    // const response = await fetch("")
 }
 
 const form = document.getElementById("form");

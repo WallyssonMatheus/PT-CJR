@@ -18,6 +18,10 @@ app.post('/post', (req, res) => {
     res.status(201).json(texto);
 });
 
+app.get('/post', (req, res) => {
+    res.status(200).json(texto);
+});
+
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {

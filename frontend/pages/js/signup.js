@@ -23,7 +23,12 @@ async function signup(event){
 
     console.log(data);
 
-    // const response = await fetch("")
+    const response = await fetch("http://localhost:3000/users/register",{
+        method: 'POST',
+        body: JSON.stringify(data)
+    });
+    
+    console.log(response.json());
 }
 
 const form = document.getElementById("form");

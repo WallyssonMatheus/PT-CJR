@@ -1,0 +1,47 @@
+#login-link {
+    color: var(--text-light-blue);
+}
+
+.main{
+    gap: 20px;
+    justify-content: space-between;
+    padding: 90px 60px;
+}
+
+.form{
+    background-color: var(--bg-slate-white);
+    height: fit-content;
+    border-radius: 5px;
+    float: right;
+    padding: 30px 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+}
+
+.input-container input{
+    background-color: var(--bg-ice-white);
+    width: 400px;
+    height: 48px;
+    border: 1px solid var(--bg-blue);
+    border-radius: 16px;
+    padding-left: 25px;
+    font-size: 24px;
+}
+
+.input-container input::placeholder{
+    color: var(--text-blue);
+    opacity: 70%;
+}
+.cadastrar{
+    background-color: var(--bg-ice-white);
+    width: 160px;
+    height: 40px;
+    text-align: center;
+    border: 1px solid var(--bg-blue);
+    border-radius: 16px;
+    color: var(--bg-blue);
+    opacity: 70%;
+    font-size: 24px;
+}

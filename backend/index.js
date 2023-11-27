@@ -1,15 +1,11 @@
 const express = require("express");
 const app = express();
 
-const userRouter = require("./Routes/userRouter.js");
-
-const jobTitleRouter = require("./Routes/jobTitleRouter.js");
+const apiRouter = require("./Routes/apiRouter.js");
 
 app.use(express.json());
 
-app.use('/users', userRouter);
-
-app.use('/job-title', jobTitleRouter);
+app.use('/api', apiRouter);
 
 const PORT = process.env.PORT || 3000;
 

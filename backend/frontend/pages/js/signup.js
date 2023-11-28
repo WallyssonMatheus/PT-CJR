@@ -23,12 +23,12 @@ async function signup(event){
 
     console.log(data);
 
-    const response = await fetch("http://localhost:3000/users/register",{
+    const response = await fetch("http://localhost:3000/api/users/register",{
         method: 'POST',
         body: JSON.stringify(data)
     });
     
-    console.log(response.json());
+    console.log(response.body);
 }
 
 const form = document.getElementById("form");

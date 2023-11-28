@@ -87,3 +87,7 @@ button:hover,label{
     align-items: center;
     padding: 0px 80px;   
 } 
+
+.redirect-link {
+    color: var(--text-light-blue);
+}

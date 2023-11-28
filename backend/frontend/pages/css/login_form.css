@@ -1,6 +1,6 @@
 .main{
     gap: 20px;
-    justify-content: space-between;
+    justify-content: center;
     padding: 90px 60px;
 }
 
@@ -27,9 +27,23 @@
 }
 
 .input-container input::placeholder{
+    padding-left: 40px;
     color: var(--text-blue);
     opacity: 70%;
+    background-repeat: no-repeat;
+    background-size: 25px;
+    background-position: 3px;
 }
+
+.input-container input[name = 'login' ]::placeholder{
+    background-image: url("../../src/imagens/user_icon.png");
+}
+
+.input-container input[name = 'senha' ]::placeholder{
+    background-image: url("../../src/imagens/lock_icon.png");
+    background-size: 20px;
+}
+
 .submit{
     background-color: var(--bg-ice-white);
     width: 160px;

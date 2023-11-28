@@ -4,7 +4,6 @@ const prisma = new PrismaClient();
 
 const createUser = async (body) => {
     const { name, email, password, profile_picture, gender, job_title } = body;
-
     const existingUser = await prisma.users.findUnique({
         where: {
             username: email,

@@ -11,4 +11,10 @@ const createPost = async (body) => {
             comments: comments
         },
     });
-}
+
+    return novoPost;
+};
+
+module.exports = {
+    createPost,
+};

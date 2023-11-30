@@ -15,6 +15,19 @@ const createPost = async (body) => {
     return novoPost;
 };
 
+const getPost = async (body) => {
+    const { content} = body;
+
+    const user = await prisma.posts.findUnique({
+        where: {
+            content: content,
+        },
+    });
+
+    return content;
+};
+
 module.exports = {
     createPost,
+    getPost,
 };

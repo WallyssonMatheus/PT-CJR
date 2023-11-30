@@ -5,20 +5,15 @@ const userRouter = require("./Routes/userRouter.js");
 
 const jobTitleRouter = require("./Routes/jobTitleRouter.js");
 
+const postRouter = require("./Routes/postRouter.js");
+
 app.use(express.json());
 
 app.use('/users', userRouter);
 
 app.use('/job-title', jobTitleRouter);
 
-app.post('/post', (req, res) => {
-    const {texto} = req.body;
-    res.status(201).json(texto);
-});
-
-app.get('/post', (req, res) => {
-    res.status(200).json({message:"Request valid!"});
-});
+app.use('/post', postRouter); 
 
 const PORT = process.env.PORT || 3000;
 

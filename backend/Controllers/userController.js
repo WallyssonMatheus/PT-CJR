@@ -1,16 +1,10 @@
 const userService = require('../Services/userService.js');
-const multi = require('multiparty');
 
 const createUser = async (req, res) => {
-    try {
-        const form = new multi.Form();
-        
-        form.parse(req ,function(err,fields,files){
-            console.log(fields)
-            console.log(files);
-            // const user = await userService.createUser();
-            // res.status(201).json(user);
-        }) 
+    try {   
+        console.log(req.body);
+        // const user = await userService.createUser();
+        // res.status(201).json(user);
     } catch (error) {
         res.status(500).json({'error': `${error}`})
     };

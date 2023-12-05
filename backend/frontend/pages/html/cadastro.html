@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>PT CJR</title>
+    <title>CJR Net - Signup</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../css/style.css" type="text/css" />
     <link rel="stylesheet" href="../css/signup_form.css" type="text/css" />
@@ -10,7 +10,8 @@
 
 <body>
     <header class="cabecalho">
-        <a href="./feed_deslogado.html">
+        <!--Sávio Henrique-->
+        <a href="/">
             <span class="logo">
                 <img src="../../src/imagens/Logo_CJR.png" />
             </span>
@@ -21,35 +22,36 @@
             <a href="./login.html"><button class="link login">Entrar</button></a>
         </nav>
     </header>
-    <div class="main">
+    <section class="main">
+        <!-- Sávio Henrique -->
         <span class="hero-logo">
             <img src="../../src/imagens/Logo_CJR_branco.png" style="width:120%">
         </span>
         <form class="form" id="form">
             <label for="perfil">
-                <img src="../../src/imagens/ph_user-circle-thinicon-cadastro.png" style="height: 200px;" />
+                <img src="../../src/imagens/cadastro_icon.png" style="width: 300px;" />
             </label>
             <input type="file" name="perfil" id="perfil" style="display:none" />
             <div class="input-container">
-                <input type="text" name="email" placeholder="Email" id="email" />
+                <input type="text" name="email" placeholder="Email" id="email" required />
             </div>
             <div class="input-container">
-                <input type="password" name="senha" placeholder="Senha" id="senha" />
+                <input type="password" name="senha" placeholder="Senha" id="senha" required />
             </div>
             <div class="input-container">
-                <input type="text" name="nome" placeholder="Nome" id="nome" />
+                <input type="text" name="nome" placeholder="Nome" id="nome" required />
             </div>
             <div class="input-container">
-                <input type="text" name="gênero" placeholder="Gênero" id="genero" />
+                <input type="text" name="gênero" placeholder="Gênero" id="genero" required />
             </div>
             <div class="input-container">
-                <input type="text" name="cargo" placeholder="Cargo" id="cargo" />
+                <input type="text" name="cargo" placeholder="Cargo" id="cargo" required />
             </div>
-            <a href="./login.html" id="login-link"><b>Já possui conta? Acesse aqui</b></a>
-            <button class="cadastrar">Cadastrar</button>
+            <a href="./login.html" class="redirect-link"><b>Já possui conta? Acesse aqui</b></a>
+            <button class="submit">Cadastrar</button>
 
         </form>
-    </div>
+    </section>
     <script src="../js/signup.js"></script>
 </body>
 

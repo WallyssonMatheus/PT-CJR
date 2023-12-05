@@ -5,6 +5,9 @@ const prisma = new PrismaClient();
 const createUser = async (body) => {
     const { name, email, password, profile_picture, gender, job_title } = body;
 
+    // Transform Base64 string to Byte Buffer
+    const bufferImage = Buffer.from(profile_picture,"base64");
+
     const existingUser = await prisma.users.findUnique({
         where: {
             username: email,
@@ -30,7 +33,7 @@ const createUser = async (body) => {
             username: email,
             password,
             name,
-            profile_picture,
+            profile_picture: bufferImage,
             gender,
             job_title,
             admin: false,

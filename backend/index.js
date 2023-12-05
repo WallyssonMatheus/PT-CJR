@@ -1,19 +1,14 @@
 const express = require("express");
 const app = express();
 
-const userRouter = require("./Routes/userRouter.js");
+const apiRouter = require("./Routes/apiRouter.js");
+const pageRouter = require("./Routes/pageRouter.js");
 
-const jobTitleRouter = require("./Routes/jobTitleRouter.js");
+app.use(express.json({limit:'50mb'}));
 
-const postRouter = require("./Routes/postRouter.js");
+app.use('/', pageRouter);
 
-app.use(express.json());
-
-app.use('/users', userRouter);
-
-app.use('/job-title', jobTitleRouter);
-
-app.use('/post', postRouter); 
+app.use('/api', apiRouter);
 
 const PORT = process.env.PORT || 3000;
 

@@ -1,0 +1,59 @@
+/*Sávio Henrique*/
+.main{
+    gap: 20px;
+    justify-content: center;
+    padding: 90px 60px;
+}
+
+.form{
+    background-color: var(--bg-slate-white);
+    height: fit-content;
+    border-radius: 5px;
+    float: right;
+    padding: 30px 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+}
+
+.input-container input{
+    background-color: var(--bg-ice-white);
+    width: 400px;
+    height: 48px;
+    border: 1px solid var(--bg-blue);
+    border-radius: 16px;
+    padding-left: 25px;
+    font-size: 24px;
+}
+
+.input-container input::placeholder{
+    padding-left: 40px;
+    color: var(--text-blue);
+    opacity: 70%;
+    background-repeat: no-repeat;
+    background-size: 25px;
+    background-position: 3px;
+}
+
+.input-container input[name = 'login' ]::placeholder{
+    background-image: url("../../src/imagens/user_icon.png");
+}
+
+.input-container input[name = 'senha' ]::placeholder{
+    background-image: url("../../src/imagens/lock_icon.png");
+    background-size: 20px;
+}
+
+.submit{
+    background-color: var(--bg-ice-white);
+    width: 160px;
+    height: 40px;
+    text-align: center;
+    border: 1px solid var(--bg-blue);
+    border-radius: 16px;
+    color: var(--bg-blue);
+    opacity: 70%;
+    font-size: 24px;
+}
+/*Sávio Henrique*/

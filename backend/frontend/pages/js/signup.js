@@ -53,8 +53,18 @@ async function signup(event){
         headers : {"Content-Type": "application/json"}
     });
 
-    // TODO - if status = 500, redo and show form error
-    console.log(await response.json())
+    const data = await response.json();
+
+    if (Object.keys(data).includes('error')) {
+        const error_message = document.getElementById("error-hidden");
+
+        error_message.style.display = "flex";
+        error_message.innerHTML = data.error;
+    } else{
+        localStorage.setItem("token", data.token);
+
+        window.location.href = "http://localhost:3000/feed_logado.html";
+    }
 }
 
 // TODO - Form validation on frontend

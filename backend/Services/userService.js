@@ -44,8 +44,7 @@ const createUser = async (body) => {
             job_title: true,
             admin: true,
             password: false,
-        },
-        rejectOnNotFound: (err) => new Error("Usuário não cadastrado"),
+        }
     });
 
     const token = jwt.createToken(createdUser);

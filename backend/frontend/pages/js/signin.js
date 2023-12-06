@@ -19,6 +19,7 @@ async function signin(event) {
         error_message.innerHTML = data.error;
     } else{
         localStorage.setItem("token", data.token);
+        sessionStorage.setItem("isAuth",true);
 
         window.location.href = "http://localhost:3000/feed_logado.html";
     }

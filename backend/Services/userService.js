@@ -54,13 +54,13 @@ const createUser = async (body) => {
 };
 
 const getUser = async (body) => {
-    const { email, password } = body;
+    const { login, password } = body;
 
     try {
 
         const user = await prisma.users.findUniqueOrThrow({
             where: {
-                username: email,
+                username: login,
             },
             select: {
                 username: true,

@@ -7,6 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "prisma": {
+    "seed": "node Prisma/seed.js",
     "schema": "Prisma/schema.prisma"
   },
   "keywords": [],

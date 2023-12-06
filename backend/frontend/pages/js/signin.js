@@ -12,12 +12,16 @@ async function signin(event) {
 
     const data = await response.json();
 
-    if ('error' in data) {
+    if (Object.keys(data).includes('error')) {
         const error_message = document.getElementById("error-hidden");
 
         error_message.style.display = "flex";
         error_message.innerHTML = data.error;
     };
+
+    localStorage.setItem("token", data.token);
+
+    window.location.href = "http://localhost:3000/feed_logado.html";
 };
 
 const submitBtn = document.getElementById("submit-btn");

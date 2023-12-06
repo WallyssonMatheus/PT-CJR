@@ -8,9 +8,7 @@ const createUser = async (body) => {
     const { name, email, password, profile_picture, gender, job_title } = body;
 
     // Transform Base64 string to Byte Buffer
-    // const bufferImage = Buffer.from(profile_picture,"base64");
-
-    if (file) profile_picture = file.path;
+    const bufferImage = Buffer.from(profile_picture,"base64");
 
     const existingUser = await prisma.users.findUnique({
         where: {
@@ -33,7 +31,7 @@ const createUser = async (body) => {
             username: email,
             password,
             name,
-            profile_picture,
+            profile_picture: bufferImage,
             gender,
             job_title,
             admin: false,
@@ -47,6 +45,7 @@ const createUser = async (body) => {
             admin: true,
             password: false,
         },
+        rejectOnNotFound: (err) => new Error("Usuário não cadastrado"),
     });
 
     const token = jwt.createToken(createdUser);
@@ -55,13 +54,13 @@ const createUser = async (body) => {
 };
 
 const getUser = async (body) => {
-    const { login, password } = body;
+    const { email, password } = body;
 
     try {
 
         const user = await prisma.users.findUniqueOrThrow({
             where: {
-                username: login,
+                username: email,
             },
             select: {
                 username: true,
@@ -73,6 +72,8 @@ const getUser = async (body) => {
                 password: false,
             },
         });
+    
+        if (!user) throw new Error("Usuário não cadastrado");
     
         if (user.password !== password ) throw new Error("Email ou senha incorretos");
     

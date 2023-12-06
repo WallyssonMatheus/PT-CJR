@@ -4,15 +4,15 @@ const tokenValidation = (req, res, next) => {
     const { authorization } = req.headers;
 
     if (!authorization) {
-        res.status(401).json({ message: 'Token not found' });
+        res.status(401).json({ message: 'Token não encontrado' });
     }
 
     try {
         const dataToken = verifyToken(authorization);
-        req.userId = dataToken.id;
+        req.user = dataToken;
         next();
     } catch (error) { 
-        return res.status(401).json({ message: 'Expired or invalid token' });
+        return res.status(401).json({ message: 'Token expirado ou inválido' });
     }
 };
 

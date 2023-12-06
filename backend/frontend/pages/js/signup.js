@@ -12,7 +12,7 @@ function getBase64(file) {
 async function signup(event){
     // Sávio Henrique
     event.preventDefault();
-    let default_profile;  
+    let default_profile;
 
     // Get Default Profile Picture
     await fetch("http://localhost:3000/src/user_profile/default_profile.jpg")

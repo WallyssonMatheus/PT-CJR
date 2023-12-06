@@ -7,6 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "prisma": {
+    "seed": "node Prisma/seed.js",
     "schema": "Prisma/schema.prisma"
   },
   "keywords": [],
@@ -14,7 +15,10 @@
   "license": "ISC",
   "dependencies": {
     "@prisma/client": "^5.6.0",
+    "dotenv": "^16.3.1",
     "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "nodemon": "^3.0.2",
     "prisma": "^5.6.0"
   }
 }

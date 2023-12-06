@@ -7,7 +7,7 @@ router.post('/register', (req, res) => {
     userController.createUser(req, res);
 });
 
-router.get('/login', (req, res) => {
+router.post('/login', (req, res) => {
     userController.getUser(req, res);
 });
 

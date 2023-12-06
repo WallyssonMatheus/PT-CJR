@@ -56,4 +56,10 @@
     opacity: 70%;
     font-size: 24px;
 }
+
+#error-hidden {
+    display: none;
+    color: red;
+}
+
 /*Sávio Henrique*/

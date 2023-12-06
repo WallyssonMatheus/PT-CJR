@@ -1,5 +1,7 @@
 const { PrismaClient } = require('@prisma/client');
 
+const jwt = require("../auxs/jwt.js")
+
 const prisma = new PrismaClient();
 
 const createUser = async (body) => {
@@ -20,13 +22,9 @@ const createUser = async (body) => {
         }
     });
 
-    if (!existingJobTitle) {
-        throw new Error("O cargo não está cadastrado na plataforma!");
-    };
+    if (!existingJobTitle) throw new Error("O cargo não está cadastrado na plataforma!");
 
-    if (existingUser) {
-        throw new Error("O email já foi cadastrado na plataforma!");
-    };
+    if (existingUser) throw new Error("O email já foi cadastrado na plataforma!");
 
     const createdUser = await prisma.users.create({
         data: {
@@ -47,38 +45,48 @@ const createUser = async (body) => {
             admin: true,
             password: false,
         },
+        rejectOnNotFound: (err) => new Error("Usuário não cadastrado"),
     });
 
-    return createdUser;
+    const token = jwt.createToken(createdUser);
+
+    return token;
 };
 
 const getUser = async (body) => {
-    const { email, password } = body;
+    const { login, password } = body;
 
-    const user = await prisma.users.findUnique({
-        where: {
-            username: email,
-        },
-        select: {
-            username: true,
-            name: true,
-            profile_picture: true,
-            gender: true,
-            job_title: true,
-            admin: true,
-            password: false,
-        },
-    });
+    try {
 
-    if (!user) {
-        throw "Usuário não cadastrado"
+        const user = await prisma.users.findUniqueOrThrow({
+            where: {
+                username: login,
+            },
+            select: {
+                username: true,
+                name: true,
+                profile_picture: true,
+                gender: true,
+                job_title: true,
+                admin: true,
+                password: false,
+            },
+        });
+    
+        if (!user) throw new Error("Usuário não cadastrado");
+    
+        if (user.password !== password ) throw new Error("Email ou senha incorretos");
+    
+        const token = jwt.createToken(user);
+    
+        return token;
+    
+    } catch (error) {
+        
+        throw new Error("Usuário não cadastrado");
+
     }
 
-    if (user.password !== password ) {
-        throw "Email ou senha incorretos"
-    };
-
-    return user;
 };
 
 module.exports = {

@@ -11,9 +11,10 @@
 
 <body>
     <script src="../js/isAuth.js"></script>
+    <script src="../js/signoff.js"></script>
     <header class="cabecalho">
         <!-- Sávio Henrique -->
-        <a href="/">
+        <a href="feed_logado.html">
             <span class="logo">
                 <img src="../../src/imagens/Logo_CJR.png" />
             </span>
@@ -22,7 +23,8 @@
         <nav>
             <p>Joazin Gamer</p>
             <img id="user-pfp" src="../../src/imagens/mock_pfp.png" />
-            <span id="log-out" class="span-button"><img src="../../src/imagens/log-out.png" /></span>
+            <span id="log-out" onclick="signoff(this)" class="span-button"><img
+                    src="../../src/imagens/log-out.png" /></span>
         </nav>
     </header>
     <section class="main">

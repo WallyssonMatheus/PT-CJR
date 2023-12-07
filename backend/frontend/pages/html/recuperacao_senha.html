@@ -2,15 +2,14 @@
 <html>
 
 <head>
-    <title>CJR Net - Signup</title>
+    <title>CJR Net - Recuperçâo de senha</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../css/style.css" type="text/css" />
-    <link rel="stylesheet" href="../css/signup_form.css" type="text/css" />
+    <link rel="stylesheet" href="../css/recupercao_form.css" type="text/css" />
 </head>
 
 <body>
     <header class="cabecalho">
-        <!--Sávio Henrique-->
         <a href="/">
             <span class="logo">
                 <img src="../../src/imagens/Logo_CJR.png" />
@@ -23,14 +22,13 @@
         </nav>
     </header>
     <section class="main">
-        <!-- Sávio Henrique -->
         <span class="hero-logo">
             <img src="../../src/imagens/Logo_CJR_branco.png" style="width:100%">
         </span>
         <form class="form" id="form">
-            <label for="perfil">
-                <img src="../../src/imagens/cadastro_icon.png" style="width: 300px;" />
-            </label>
+            <span class="mensagem">
+                Bem-vindo de volta, fulano! Escolha sua nova senha
+            </span>
             <input type="file" name="perfil" id="perfil" style="display:none" />
             <div class="input-container">
                 <input type="text" name="email" placeholder="Email" id="email" required />
@@ -39,16 +37,10 @@
                 <input type="password" name="senha" placeholder="Senha" id="senha" required />
             </div>
             <div class="input-container">
-                <input type="text" name="nome" placeholder="Nome" id="nome" required />
-            </div>
-            <div class="input-container">
-                <input type="text" name="gênero" placeholder="Gênero" id="genero" required />
-            </div>
-            <div class="input-container">
-                <input type="text" name="cargo" placeholder="Cargo" id="cargo" required />
+                <input type="password" name="senha" placeholder="Confirmar senha" id="senha" required />
             </div>
             <a href="./login.html" class="redirect-link"><b>Já possui conta? Acesse aqui</b></a>
-            <button class="submit" id="submit">Cadastrar</button>
+            <button class="submit" id="submit">Confirmar</button>
 
         </form>
     </section>

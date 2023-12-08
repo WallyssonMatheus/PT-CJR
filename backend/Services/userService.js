@@ -44,8 +44,7 @@ const createUser = async (body) => {
             job_title: true,
             admin: true,
             password: false,
-        },
-        rejectOnNotFound: (err) => new Error("Usuário não cadastrado"),
+        }
     });
 
     const token = jwt.createToken(createdUser);
@@ -56,37 +55,28 @@ const createUser = async (body) => {
 const getUser = async (body) => {
     const { login, password } = body;
 
-    try {
+    const user = await prisma.users.findUnique({
+        where: {
+            username: login,
+        },
+        select: {
+            username: true,
+            name: true,
+            profile_picture: true,
+            gender: true,
+            job_title: true,
+            admin: true,
+            password: true,
+        },
+    });
 
-        const user = await prisma.users.findUniqueOrThrow({
-            where: {
-                username: login,
-            },
-            select: {
-                username: true,
-                name: true,
-                profile_picture: true,
-                gender: true,
-                job_title: true,
-                admin: true,
-                password: false,
-            },
-        });
-    
-        if (!user) throw new Error("Usuário não cadastrado");
-    
-        if (user.password !== password ) throw new Error("Email ou senha incorretos");
-    
-        const token = jwt.createToken(user);
-    
-        return token;
-    
-    } catch (error) {
-        
-        throw new Error("Usuário não cadastrado");
+    if (!user) throw new Error("Usuário não cadastrado");
 
-    }
+    if (user.password !== password ) throw new Error("Email ou senha incorretos");
 
+    const token = jwt.createToken(user);
+
+    return token;
 };
 
 module.exports = {

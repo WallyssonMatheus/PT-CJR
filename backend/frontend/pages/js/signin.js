@@ -2,11 +2,11 @@ async function signin(event) {
     event.preventDefault();
 
     const login = document.getElementById("login").value;
-    const senha = document.getElementById("senha").value;
+    const password = document.getElementById("senha").value;
 
     const response = await fetch("http://localhost:3000/api/users/login",{
         method: 'POST',
-        body: JSON.stringify({ login, senha }),
+        body: JSON.stringify({ login, password }),
         headers : {"Content-Type": "application/json"}
     });
 
@@ -17,11 +17,12 @@ async function signin(event) {
 
         error_message.style.display = "flex";
         error_message.innerHTML = data.error;
-    };
+    } else{
+        localStorage.setItem("token", data.token);
+        sessionStorage.setItem("isAuth",true);
 
-    localStorage.setItem("token", data.token);
-
-    window.location.href = "http://localhost:3000/feed_logado.html";
+        window.location.href = "http://localhost:3000/feed_logado.html";
+    }
 };
 
 const submitBtn = document.getElementById("submit-btn");

@@ -59,6 +59,12 @@
     overflow: hidden;
 }
 
+.user-container{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .user .text{
     display: flex;
     align-items: baseline;
@@ -67,6 +73,15 @@
 
 .username{
     font-size: 24px;
+}
+
+#delete {
+    width: 24px;
+    height: 24px;
+}
+
+#delete img{
+    width: inherit;
 }
 
 .post-date{
@@ -89,4 +104,26 @@
 .post .content img{
     background-color: white;
     width: 100%;
+}
+
+.post .lower-bar{
+    padding-top: 20px;
+    padding-left: 60px;
+    display: flex;
+    gap: 30px;
+}
+
+#comment{
+    width: 24px;
+    height: 24px;
+}
+#comment img{
+    width: inherit;
+}
+#edit{
+    width: 24px;
+    height: 24px;
+}
+#edit img{
+    width: inherit;
 }

@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    <script src="../js/isAuth.js"></script>
     <header class="cabecalho">
         <!--Sávio Henrique-->
         <a href="/">
@@ -18,8 +19,8 @@
         </a>
 
         <nav>
-            <a href="./cadastro.html"><button class="link signup">Criar conta</button></a>
-            <a href="./login.html"><button class="link login">Entrar</button></a>
+            <a href="cadastro.html"><button class="link signup">Criar conta</button></a>
+            <a href="login.html"><button class="link login">Entrar</button></a>
         </nav>
     </header>
     <section class="main">
@@ -47,6 +48,7 @@
             <div class="input-container">
                 <input type="text" name="cargo" placeholder="Cargo" id="cargo" required />
             </div>
+            <span id='error-hidden'></span>
             <a href="./login.html" class="redirect-link"><b>Já possui conta? Acesse aqui</b></a>
             <button class="submit" id="submit">Cadastrar</button>
 
